@@ -111,20 +111,20 @@ nav a.nohover:hover::after{
 }
   /************************************************************/
   .resource-intro {
-    background: #7cd19a;
+    padding-top: 100px;
     overflow: hidden;
   }
 
   .deposit-recycle{
-    background: #79e49f;
+    padding-top: 250px;
   }
 
  .regualar-recycle {
-    background: #95ff98;
+    padding-top: 100px;
   }
 
   .flexible-plastic {
-    background: #BEFFD5;
+    padding-top: 100px;
   }
 
   .resource-container {
@@ -205,7 +205,7 @@ nav a.nohover:hover::after{
   }
   
   .second-mission-text-flex-section {
-    text-align: left;
+    text-align: center;
     padding: 0 10px;
     display: block;
     flex-grow: 0;
@@ -225,7 +225,7 @@ nav a.nohover:hover::after{
   }
   
   .second-mission-img-flex-section img{
-    height: 500px;
+    height: 300px;
     align-items: left;
     padding-right: 100px;
     object-fit: cover;
