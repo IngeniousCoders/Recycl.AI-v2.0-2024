@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap');
+html{
+    margin: 0;
+}
+body{
+    font-family: 'Ubuntu', sans-serif;
+    background-image: url('inference_design.svg');
+    color: #044B25;
+}
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #044B25 #beffd5;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 19px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #beffd5;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #044B25;
+    border-radius: 10px;
+    border: 4px solid #beffd5;
+  }
+  
+a, a:visited{
+    color: #044B25;
+    text-decoration: none;
+    cursor: pointer;
+}
+a::after {
+    content: '';
+    width: 0px;
+    height: 3px;
+    display: block;
+    background: #044B25;
+    transition: 300ms;
+}
+.home-title a::after{
+    height: 10px;
+}
+a:hover::after {
+    width: 100%;
+}
+a.nohover:hover::after{
+    width: 0;
+}
+
+nav a{
+    font-size: 30px;
+    float:right;
+}
+nav :first-child{
+    float: left;
+    position: absolute;
+    top:2%;
+    left:2%;
+}
+nav :last-child{
+    position: fixed;
+    top:2%;
+    right:2%;
+}
+nav{
+    padding: 2%;
+    padding-bottom: 0;
+    height: 50px;
+}
+
+
+.home-title{
+    width: 40%;
+    font-size: 150px;
+    margin:0;
+    margin-top: 14%;
+    line-height: 0.8;
+}
+.home-sub{
+    margin:0;
+    margin-top: 50px;
+    font-weight: 300;
+    font-size: 48px;
+    width: 50%;
+}
+.home-container{
+    margin: 3%;
+}
+.home-logo{
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-25%);
+}
+#result-placeholder h1{
+    position: absolute;
+    width: 30%;
+    left: 75%;
+    top: 50%;
+    transform: translate(-50%, -75%);
+}
+.inference-container{
+    max-height: 500px;
+    display: flex;
+    width: 60%;
+    gap: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.camera-preview{
+    display: block;
+    flex-grow: 1;
+    background: whitesmoke;
+    overflow: hidden;
+}
+.camera-preview video, .camera-preview img{
+    height: 100%;
+}
+.camera-preview .button-container{
+    position: absolute;
+    bottom: 30px;
+    left: 25%;
+    transform: translateX(-100%);
+    z-index: 1000;
+}
+.button-container button{
+    height: 50px;
+    width: 50px;
+    margin:0;
+    padding:0;
+    border:none;
+    background: transparent;
+}
+.button-container svg{
+    height: 100%;
+    fill:#9FEFBC;
+}
+.spinning{
+    /* The animation part: */
+    animation-name: spin;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+.camera-preview.bottle{
+    background-size: cover;
+    background-position: center;
+    background-image: url(https://images.unsplash.com/photo-1615182611773-f2fb2e6a6492?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80);
+}
+.camera-preview.can{
+    background-size: cover;
+    background-position: center;
+    background-image: url(https://unblast.com/wp-content/uploads/2020/03/Soda-Can-in-Hand-Mockup-2.jpg);
+}
+#serverimage{
+    position: absolute;
+    z-index: 100;
+    bottom: 0;
+    border-radius: 50px;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    transition: 0.5s ease-out;
+}
+#serverimage.closed{
+    min-width: 150px;
+    min-height: 150px;
+    width: 0%;
+    height: 0%;
+    border-radius: 0 30px 0 50px;
+}
+#serverimage:hover{
+    border-radius: 50px;
+    width: calc(50% - 45px);
+    height: 100%;
+    aspect-ratio: 1 / 1;
+}
+.inference-container > div{
+    flex-basis: 50%;
+    aspect-ratio: 1;
+    border-radius: 50px;
+}
+.result-information{
+    aspect-ratio: 1;
+    max-height: 500px;
+    display: block;
+    background: #9FEFBC;
+    padding: 20px;
+    text-align: center;
+    font-size: 25px;
+}
+.result-information h2, .result-information h4{
+    font-size: 30px;
+    margin-bottom: 0;
+}
+.result-information h3{
+    font-size: 25px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+.result-information h4{
+    font-weight: 200;
+}
+.result-information p{
+    margin: 0;
+    font-size: medium;
+}
+.detected-information{
+    padding-top: 10px;
+    justify-self: center;
+    display: block;
+    flex-grow: 1;
+    max-height: 300px;
+}
+.mission-container{
+    margin: 3%;
+    font-size: 30px;
+    margin-bottom: 15%;
+}
+.mission-container p{
+    margin-right: 35%;
+}
+.mission-container h1{
+    font-size: 150px;
+    margin-bottom: 0px;
+    margin-top: 400px;
+}
+.vshackslogo{
+    fill: #044B25;
+    width: 60px;
+    height: 60px;
+    
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+.error-container{
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+}
+.error-container img{
+    width: 40%;
+    margin-bottom: 30px;
+}
+.loading-text{
+    position: absolute;
+    top:50%;
+    left: 25%;
+    transform: translate(-75%, -50%);
+    font-size: 30px;
+    font-weight: 700;
+}
+.noresult-text{
+    position: absolute;
+    top:50%;
+    right: 25%;
+    transform: translate(50%, -50%);
+    font-size: 60px;
+    font-weight: 700;
+    width: 40%;
+}
+#inference-speed{
+    position:absolute;
+    bottom: 10px;
+    left: 75%;
+    transform: translateX(-50%);
+    font-size: 15px;
+}
+#camera-select{
+    position: absolute;
+    bottom:6px;
+    padding: 3px;
+    left: calc(25% - 25px);
+    transform: translateX(-50%);
+    border-radius: 10px;
+    border-style: none;
+    background:#beffd5;
+    font-family: 'Ubuntu', sans-serif;
+}
+*:focus {
+    outline: none;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
